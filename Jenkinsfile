@@ -7,6 +7,6 @@ pipeline {
   stages {
   stage "Deploy"
 
-        sh "sed 's#__IMAGE__#'$BUILDIMG'#' part1/hello-kenzan/k8s/deployment.yaml | kubectl apply -f -"
+        sh "sed 's#__IMAGE__#'$BUILDIMG'#' deployment.yaml | kubectl apply -f -"
 }
 }
