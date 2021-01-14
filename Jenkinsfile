@@ -3,4 +3,4 @@ pipeline {
     kubernetes {
       yamlFile 'deployment.yaml'
     }
-  }
+  }}
