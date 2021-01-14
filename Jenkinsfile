@@ -1,6 +1,6 @@
 pipeline {
   agent {
     kubernetes {
-      yamlFile 'deploy.yaml'
+      yamlFile 'deployment.yaml'
     }
   }
