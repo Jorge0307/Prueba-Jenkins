@@ -1,19 +1,26 @@
 # hello-kubernetes.yaml
-
 metadata:
-  name: hello-kubernetes
+  labels:
+    some-label: some-label-value
 spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: hello-kubernetes
-  template:
-    metadata:
-      labels:
-        app: hello-kubernetes
-    spec:
-      containers:
-      - name: hello-kubernetes
-        image: paulbouwer/hello-kubernetes:1.8
-        ports:
-        - containerPort: 8080
+  containers:
+  - name: jnlp
+    env:
+    - name: CONTAINER_ENV_VAR
+      value: jnlp
+  - name: maven
+    image: maven:3.3.9-jdk-8-alpine
+    command:
+    - cat
+    tty: true
+    env:
+    - name: CONTAINER_ENV_VAR
+      value: maven
+  - name: busybox
+    image: busybox
+    command:
+    - cat
+    tty: true
+    env:
+    - name: CONTAINER_ENV_VAR
+      value: busybox
