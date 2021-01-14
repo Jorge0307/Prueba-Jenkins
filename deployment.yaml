@@ -1,6 +1,5 @@
 # hello-kubernetes.yaml
 
-kind: Deployment
 metadata:
   name: hello-kubernetes
 spec:
